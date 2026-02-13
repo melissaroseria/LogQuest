@@ -2,32 +2,57 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>LogQuest - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='simple.css') }}">
+    <title>LogQuest V5 - Rapid7 Edition</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <span class="brand">🦂 LogQuest V5</span>
-            <span class="status">Katil Akrep Sis Modu Aktif</span> </div>
-    </nav>
+    <header class="dash-header">
+        <div class="brand">🚀 RAPID7 / LOGQUEST</div>
+        <div class="status-indicator" style="color:#00ffcc">● Sis Modu Aktif</div>
+    </header>
 
-    <div class="dashboard-container">
-        <div class="control-box">
-            <h3>🎯 Hedef Belirle</h3>
-            <input type="text" id="target_ip" placeholder="Hedef IP (örn: 161.117.95.164)" value="161.117.95.164"> <input type="number" id="target_port" placeholder="Port" value="443"> <button onclick="startFire()">Vuruşu Başlat</button>
-        </div>
-
-        <div class="control-box">
-            <h3>📦 Proxy Mühimmat Deposu</h3>
-            <div class="proxy-list">
-                <p>Proxy/get.txt içindeki API'lerden çekilen mermiler:</p>
-                <ul id="active_proxies">
-                    <li>SOCKS5://GeoNode_Mühimmat_Aktif...</li>
-                </ul>
+    <main class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="card" style="padding:10px; text-align:center;">
+                <small>HIZ</small>
+                <div style="color:var(--accent); font-size:1.2rem; font-weight:bold;">55 KBPS</div>
             </div>
-            <button class="secondary">Mühimmatı Tazele</button>
+            <div class="card" style="padding:10px; text-align:center;">
+                <small>GÜVENLİK</small>
+                <div style="color:#00ffcc; font-size:1.2rem; font-weight:bold;">SOCKS5</div>
+            </div>
         </div>
-    </div>
+
+        <section class="card">
+            <h3>🎯 Hedef Kontrolü</h3>
+            <input type="text" id="target" placeholder="Host: c.mi.com" value="c.mi.com">
+            <input type="number" id="port" placeholder="Port: 80" value="80">
+            
+            <h3>📦 Mühimmat Seçimi</h3>
+            <select id="proxy_api" class="custom-select">
+                <option>ProxyScrape API - Aktif</option>
+                <option>GeoNode API - Ultra</option>
+            </select>
+            
+            <button class="fire-btn" onclick="startFire()">OPERASYONU BAŞLAT</button>
+        </section>
+
+        <section class="card">
+            <h3>📟 İşlem Kaydı</h3>
+            <div class="terminal-box" id="logs">
+                <p class="log-info">[INIT] LogQuest V5 Hayalet Modu Yüklendi...</p>
+                <p class="log-warn">[WAIT] Kuantum makineler taranıyor...</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function startFire() {
+            const logBox = document.getElementById('logs');
+            logBox.innerHTML += `<p class="log-danger">[FIRE] 55 KBPS Sinsi Vuruş Başlatıldı!</p>`;
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+    </script>
 </body>
 </html>
