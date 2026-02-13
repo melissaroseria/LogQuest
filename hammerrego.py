@@ -5,7 +5,7 @@ import requests
 import os
 import time
 
-# V8.18 Premium - Gelişmiş Renk Paleti
+# V8.120 Premium - Gelişmiş Renk Paleti
 PEMBE = '\033[95m'
 MOR = '\033[35m'
 CYAN = '\033[96m'
@@ -17,6 +17,7 @@ RESET = '\033[0m'
 async def proxy_muhimmat_depola():
     """Apiden proxy mühimmatı toplar"""
     api_url = "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=protocolipport&format=json"
+    api_url = "https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc"
     try:
         r = requests.get(api_url, timeout=5)
         if r.status_code == 200:
