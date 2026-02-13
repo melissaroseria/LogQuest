@@ -5,7 +5,7 @@ import requests
 import os
 import time
 
-# V8.5 Ultra - Gelişmiş Renk Paleti
+# V8.55 Ultra - Gelişmiş Renk Paleti
 PEMBE = '\033[95m'
 MOR = '\033[35m'
 CYAN = '\033[96m'
