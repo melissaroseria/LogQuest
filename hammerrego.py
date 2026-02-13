@@ -71,11 +71,12 @@ async def main_panel():
             for proxy in proxies:
                 # İstediğin Kutu İçinde Şekilli Proxy Bilgisi
                 print(f"\n{MOR}┌────────────────────────────────────────────────────────┐")
-                print(f"│ {CYAN}{BOLD}AKTİF KANAL   ➤ {MOR}{proxy.split(':')[0].ljust(15)} {CYAN}PORT ➤ {MOR}{proxy.split(':')[1].ljust(6)} {CYAN}│")
-                print(f"│ {CYAN}{BOLD}DÖNGÜ SÜRESİ  ➤ {YESIL}25 SANİYE KURALI AKTİF             {CYAN}│")
+                print(f"│ {CYAN}{BOLD}İP   ➤ {MOR}{proxy.split(':')[0].ljust(15)} {CYAN}İP ➤ {MOR}{proxy.split(':')[1].ljust(6)} {CYAN}│")
+                print(f"│ {CYAN}{BOLD}DÖNGÜ  ➤ {YESIL}25             {CYAN}│")
                 print(f"└────────────────────────────────────────────────────────┘{RESET}")
-                
+                print(f"{CYAN}╔══════════════════════════════════════════════════════════╗")
                 print(f"{CYAN}{'Interfaces'.ljust(15)} | {'RX bps'.center(15)} | {'TX bps'.center(15)}{RESET}")
+                print(f"{CYAN}╚══════════════════════════════════════════════════════════╝{RESET}")
                 
                 tasks = []
                 for target_host, port in targets:
