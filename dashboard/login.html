@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='simple.css') }}">
+    <title>LogQuest V5 - Login</title>
+</head>
+<body class="insta-bg">
+    <div class="login-card">
+        <h1 class="logo">LogQuest V5</h1>
+        <form action="/panel" method="GET">
+            <input type="password" placeholder="Giriş Kodu (Sis Modu)" required>
+            <button type="submit">Giriş Yap</button>
+        </form>
+        <div class="divider"><span>VEYA</span></div>
+        <p class="helper-text">Gemini & Helcurt Güvencesiyle</p>
+    </div>
+</body>
+</html>
 
