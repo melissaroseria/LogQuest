@@ -4,55 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='simple.css') }}">
-    <title>LogQuest V5 - Rapid7 Edition</title>
+    <title>Rapid7 | LogQuest Command Platform</title>
 </head>
 <body>
-    <header class="dash-header">
-        <div class="brand">🚀 RAPID7 / LOGQUEST</div>
-        <div class="status-indicator" style="color:#00ffcc">● Sis Modu Aktif</div>
-    </header>
-
-    <main class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div class="card" style="padding:10px; text-align:center;">
-                <small>HIZ</small>
-                <div style="color:var(--accent); font-size:1.2rem; font-weight:bold;">55 KBPS</div>
+    <div class="app-wrapper">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-box">R</div>
+                <span class="brand-text">RAPID7</span>
             </div>
-            <div class="card" style="padding:10px; text-align:center;">
-                <small>GÜVENLİK</small>
-                <div style="color:#00ffcc; font-size:1.2rem; font-weight:bold;">SOCKS5</div>
+            <div class="menu-section">
+                <small class="menu-title">MENU</small>
+                <div class="menu-item"><i class="icon-profile"></i> Profile</div>
+                <div class="menu-item active"><i class="icon-dash"></i> Dashboard</div>
+                <div class="menu-item"><i class="icon-attack"></i> Attack Surface</div>
+                <div class="menu-item"><i class="icon-risk"></i> Executive Risk</div>
+                <div class="menu-item"><i class="icon-auto"></i> Automation</div>
             </div>
-        </div>
-
-        <section class="card">
-            <h3>🎯 Hedef Kontrolü</h3>
-            <input type="text" id="target" placeholder="Host: c.mi.com" value="c.mi.com">
-            <input type="number" id="port" placeholder="Port: 80" value="80">
-            
-            <h3>📦 Mühimmat Seçimi</h3>
-            <select id="proxy_api" class="custom-select">
-                <option>ProxyScrape API - Aktif</option>
-                <option>GeoNode API - Ultra</option>
-            </select>
-            
-            <button class="fire-btn" onclick="startFire()">OPERASYONU BAŞLAT</button>
-        </section>
-
-        <section class="card">
-            <h3>📟 İşlem Kaydı</h3>
-            <div class="terminal-box" id="logs">
-                <p class="log-info">[INIT] LogQuest V5 Hayalet Modu Yüklendi...</p>
-                <p class="log-warn">[WAIT] Kuantum makineler taranıyor...</p>
+            <div class="sidebar-footer">
+                <div class="footer-item">Notifications <span class="badge">12</span></div>
+                <div class="footer-item">Setting</div>
             </div>
-        </section>
-    </main>
+        </nav>
 
-    <script>
-        function startFire() {
-            const logBox = document.getElementById('logs');
-            logBox.innerHTML += `<p class="log-danger">[FIRE] 55 KBPS Sinsi Vuruş Başlatıldı!</p>`;
-            logBox.scrollTop = logBox.scrollHeight;
-        }
-    </script>
+        <main class="main-content">
+            <header class="content-header">
+                <div class="breadcrumb">Command Platform / <span>Rapid Supplies</span></div>
+                <h1 class="page-title">Your Security Program</h1>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header"><small>Total Assets</small> <i class="info-icon">i</i></div>
+                    <div class="stat-value">21,268</div>
+                    <div class="stat-trend positive">↑ 10%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header"><small>Active Proxies</small> <i class="info-icon">i</i></div>
+                    <div class="stat-value">250</div> <div class="stat-trend negative">↓ 12%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header"><small>KBPS Flow</small> <i class="info-icon">i</i></div>
+                    <div class="stat-value">55</div> <div class="stat-trend positive">↑ 20%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header"><small>Cloud Assets</small> <i class="info-icon">i</i></div>
+                    <div class="stat-value">347</div>
+                </div>
+            </div>
+
+            <div class="operation-panel">
+                <div class="chart-section card">
+                    <div class="card-header">
+                        <h3>New And Remediated Vulnerabilities</h3>
+                        <div class="time-filters">D M Y All Custom</div>
+                    </div>
+                    <div class="live-terminal" id="terminal">
+                        <p class="log-info">[INIT] LogQuest V5 SOC Monitor Aktif...</p>
+                        <p class="log-danger">[FIRE] Sinsi 55 KBPS Vuruş Başlatıldı!</p>
+                    </div>
+                </div>
+                
+                <div class="control-section card">
+                    <h3>Target Control</h3>
+                    <input type="text" placeholder="IP: 161.117.95.164" id="target_ip">
+                    <button class="rapid-btn" onclick="fire()">VURUŞU BAŞLAT</button>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
