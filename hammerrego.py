@@ -101,7 +101,7 @@ async def main_panel():
     
     if secim == "1" or secim == "01/A":
         proxies = await proxy_muhimmat_depola() 
-        targets = [("sgp-api.buy.mi.com", 443), (161.117.95.164, 22), ("c.mi.com", 80)]
+        targets = [("sgp-api.buy.mi.com", 443), ("161.117.95.164", 22), ("c.mi.com", 80)]
         
         os.system('clear')
         while True:
