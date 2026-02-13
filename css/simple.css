@@ -1,4 +1,28 @@
+/* Instagram Temalı Dark Style */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex; justify-content: center; align-items: center; height: 100vh;
 }
-  color : 50X
-  deeplodors : 25.50X
+
+.login-card {
+    background: #121212;
+    border: 1px solid #363636;
+    padding: 40px; text-align: center; width: 350px;
 }
+
+.logo { font-family: 'Brush Script MT', cursive; font-size: 3rem; margin-bottom: 20px; color: #fff; }
+
+input {
+    width: 100%; padding: 10px; margin: 10px 0;
+    background: #1a1a1a; border: 1px solid #363636; color: #fff; border-radius: 3px;
+}
+
+button {
+    width: 100%; padding: 10px; background: #0095f6;
+    border: none; color: white; font-weight: bold; cursor: pointer; border-radius: 5px;
+}
+
+.dashboard-container { display: flex; gap: 20px; padding: 20px; }
+.control-box { background: #121212; border: 1px solid #363636; padding: 20px; border-radius: 10px; width: 300px; }
