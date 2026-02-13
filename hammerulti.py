@@ -86,6 +86,8 @@ def main():
         
         if proxies:
             target = "sgp-api.buy.mi.com"
+            target = "https://c.mi.com"
+            target = "161.117.95.164"
             print(f"\n\033[92mRUN: '{target}' Xiaomi Darlanmaya Hazır Senin İçin Seçildi!\033[0m")
             saldiri_dongusu(target, proxies)
             
