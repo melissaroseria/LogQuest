@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>LogQuest - Dashboard</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="brand">🦂 LogQuest V5</span>
+            <span class="status">Katil Akrep Sis Modu Aktif</span> </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="control-box">
+            <h3>🎯 Hedef Belirle</h3>
+            <input type="text" id="target_ip" placeholder="Hedef IP (örn: 161.117.95.164)" value="161.117.95.164"> <input type="number" id="target_port" placeholder="Port" value="443"> <button onclick="startFire()">Vuruşu Başlat</button>
+        </div>
+
+        <div class="control-box">
+            <h3>📦 Proxy Mühimmat Deposu</h3>
+            <div class="proxy-list">
+                <p>Proxy/get.txt içindeki API'lerden çekilen mermiler:</p>
+                <ul id="active_proxies">
+                    <li>SOCKS5://GeoNode_Mühimmat_Aktif...</li>
+                </ul>
+            </div>
+            <button class="secondary">Mühimmatı Tazele</button>
+        </div>
+    </div>
+</body>
+</html>
