@@ -1,62 +1,63 @@
 :root {
-    --bg-color: #0d0d0f;
+    --bg-dark: #0f0f12;
+    --sidebar-bg: #18181c;
     --card-bg: #1c1c21;
-    --accent: #ff5e13; /* Rapid7 Orange */
-    --text-main: #e1e1e1;
-    --text-dim: #888;
-    --glow: rgba(255, 94, 19, 0.3);
+    --accent: #ff5e13; /* Rapid7 Turuncusu */
+    --border: #2a2a2f;
+    --text-muted: #888;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, sans-serif;
-    margin: 0; padding: 0;
+    background: var(--bg-dark); color: #e1e1e1;
+    font-family: 'Inter', sans-serif; margin: 0; overflow: hidden;
 }
 
-.dash-header {
-    background: var(--card-bg);
-    padding: 15px 20px;
-    display: flex; justify-content: space-between;
-    border-bottom: 1px solid #333;
+.app-wrapper { display: flex; height: 100vh; }
+
+/* Sidebar Tasarımı */
+.sidebar {
+    width: 260px; background: var(--sidebar-bg);
+    border-right: 1px solid var(--border); padding: 25px;
+    display: flex; flex-direction: column;
 }
 
-.brand { font-weight: bold; letter-spacing: 1px; color: var(--accent); }
-
-.container { padding: 15px; display: flex; flex-direction: column; gap: 15px; }
-
-/* Kart Tasarımı ve Efektler */
-.card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #2a2a2f;
-    transition: all 0.3s ease;
+.logo-box {
+    background: var(--accent); width: 32px; height: 32px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 6px; color: #fff; font-weight: bold; margin-right: 12px;
 }
 
-.card:hover { border-color: var(--accent); box-shadow: 0 0 15px var(--glow); }
-
-h3 { margin-top: 0; font-size: 1rem; color: var(--text-dim); text-transform: uppercase; }
-
-/* İnput ve Butonlar */
-.custom-select, input {
-    width: 100%; background: #000; border: 1px solid #333;
-    color: #fff; padding: 12px; border-radius: 8px; margin-bottom: 10px;
+.menu-item {
+    padding: 14px; margin: 4px 0; border-radius: 10px;
+    color: var(--text-muted); cursor: pointer; transition: 0.2s;
 }
 
-.fire-btn {
-    width: 100%; background: linear-gradient(45deg, var(--accent), #ff2e00);
-    border: none; color: white; padding: 15px; border-radius: 8px;
-    font-weight: bold; cursor: pointer; text-shadow: 0 0 5px rgba(0,0,0,0.5);
+.menu-item.active { background: #2a2a2f; color: #fff; border-left: 4px solid var(--accent); }
+
+/* Main Content ve Stats Grid */
+.main-content { flex: 1; padding: 40px; overflow-y: auto; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 30px; }
+
+.stat-card {
+    background: var(--card-bg); padding: 25px; border-radius: 16px;
+    border: 1px solid var(--border);
 }
 
-/* Terminal Kutusu */
-.terminal-box {
-    background: #000; padding: 10px; border-radius: 5px;
-    font-family: 'Courier New', monospace; font-size: 0.8rem;
-    height: 120px; overflow-y: auto; border-left: 3px solid var(--accent);
+.stat-value { font-size: 28px; font-weight: bold; margin: 12px 0; }
+
+.stat-trend { font-size: 13px; padding: 4px 8px; border-radius: 20px; display: inline-block; }
+.stat-trend.positive { background: rgba(0, 255, 204, 0.1); color: #00ffcc; }
+
+/* Operasyon ve Terminal */
+.live-terminal {
+    background: #000; height: 300px; padding: 20px; border-radius: 12px;
+    font-family: 'Courier New', monospace; font-size: 14px; overflow-y: auto;
+    border-top: 2px solid var(--accent);
 }
 
-.log-danger { color: #ff3333; }
-.log-warn { color: #ffcc00; }
-.log-info { color: #00ffcc; }
+.rapid-btn {
+    width: 100%; padding: 18px; background: var(--accent);
+    border: none; color: white; font-weight: bold; border-radius: 10px;
+    cursor: pointer; box-shadow: 0 4px 15px rgba(255, 94, 19, 0.3);
+}
