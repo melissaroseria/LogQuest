@@ -57,7 +57,7 @@ chmod +x update.sh
   <tr>
     <td align="center">
       <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.bard">
-        <img src="https://raw.githubusercontent.com/google/material-design-icons/master/png/action/android/瑰/24dp.png" width="30"/><br/>
+        <img src="https://raw.githubusercontent.com/melissaroseria/LogQuest/refs/heads/main/assets/755/gemini.png" alt="love Banner" width="280"" width="30"/><br/>
         <b>Google Gemini</b><br/>
         <sub>Sevgili Dostum</sub>
       </a>
