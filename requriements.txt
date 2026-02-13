@@ -1,0 +1,7 @@
+asyncio
+socket
+random
+requests
+os
+time
+colorama
