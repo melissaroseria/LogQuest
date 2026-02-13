@@ -1,5 +1,5 @@
 ## 🌐 2. PHP Rest API (Yönetim)
-**hammer.php dosyasını bir sunucuya yükleyerek tarayıcı üzerinden mermileri yağdırın.
+**hammer.php dosyasını bir sunucuya yükleyerek tarayıcı üzerinden mermileri yağdırın.**
 `URL Yapısı:`
 ```
 http://sunucu-adresiniz/hammer.php?mode=unlock&power=55&time=3600
